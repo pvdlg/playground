@@ -1,0 +1,29 @@
+language: node_js
+
+node_js:
+  - 12
+
+cache:
+  npm: false
+
+install:
+  - travis_retry npm install
+
+script:
+  - npm run test
+
+branches:
+  only:
+    - master
+    - next
+    - beta
+    - /^\d+\.(\d+|x)(\.x)?$/
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      install:
+        - travis_retry npm install
+      script:
+        - npm run semantic-release

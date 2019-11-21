@@ -1,0 +1,34 @@
+{
+  "name": "semantic-release-beta-migration",
+  "dependencies": {
+    "execa": "^3.2.0",
+    "lodash": "^4.17.15",
+    "semver": "^6.0.0"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.6",
+    "@semantic-release/git": "^7.1.0-beta.10",
+    "semantic-release": "^16.0.0-beta.44",
+    "xo": "^0.25.0"
+  },
+  "main": "index.js",
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "es5"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ]
+  },
+  "xo": {
+    "prettier": true,
+    "space": true
+  }
+}
